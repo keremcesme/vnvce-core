@@ -2,8 +2,8 @@
 import Foundation
 
 #if (os(Linux) || os(macOS)) && canImport(Vapor)
-open extension Endpoint {
-    open struct RouteDefinition {
+extension Endpoint {
+    public struct RouteDefinition {
         public let root: [String]
         public let method: HTTPMethod
         public let path: [String]
