@@ -1,7 +1,7 @@
 
 import Foundation
 
-public enum APIVersion: String {
+public enum APIVersion: String, CaseIterable {
     case v1
     case v2
     case v3
@@ -12,4 +12,8 @@ public enum APIVersion: String {
     case v8
     case v9
     case v10
+    
+    static func withLabel(_ label: String) -> APIVersion? {
+        return self.allCases.first{ "\($0)" == label }
+    }
 }
