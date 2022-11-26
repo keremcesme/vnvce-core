@@ -8,7 +8,7 @@ extension Endpoint {
         public let method: HTTPMethod
         public let path: [String]
         
-        init(root: [String], method: HTTPMethod, path: [String] = []) {
+        public init(root: [String], method: HTTPMethod, path: [String] = []) {
             self.root = root
             self.method = method
             self.path = path
