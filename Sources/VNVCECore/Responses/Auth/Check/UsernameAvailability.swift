@@ -2,7 +2,7 @@
 import Foundation
 
 public struct UsernameAvailability {
-    public enum V1 {
+    public enum V1: Codable {
         case used
         case notUsed
         case reservedBySameUser
