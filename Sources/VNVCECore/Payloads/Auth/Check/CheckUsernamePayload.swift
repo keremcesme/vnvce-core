@@ -8,7 +8,7 @@ public struct CheckUsernamePayload {
         
         public enum CodingKeys: String, CodingKey {
             case clientID = "client_id"
-            case username = "phone_number"
+            case username = "username"
         }
     }
 }
