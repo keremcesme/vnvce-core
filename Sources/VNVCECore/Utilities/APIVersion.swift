@@ -13,7 +13,10 @@ public enum APIVersion: String, CaseIterable {
     case v9
     case v10
     
-    static func withLabel(_ label: String) -> APIVersion? {
+    static func withLabel(_ label: String?) -> APIVersion? {
+        guard let label else {
+            return nil
+        }
         return self.allCases.first{ "\($0)" == label }
     }
 }
