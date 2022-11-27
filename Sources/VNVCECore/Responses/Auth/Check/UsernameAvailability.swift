@@ -7,6 +7,7 @@ public struct UsernameAvailability {
         case notUsed
         case reservedBySameUser
         case reserved
+        case invalidFormat
         case blacklisted
         
         public var description: String {
@@ -19,6 +20,8 @@ public struct UsernameAvailability {
                 return "The username is reserved by the same user."
             case .reserved:
                 return "Username is reserved."
+            case .invalidFormat:
+                return "Invalid format."
             case .blacklisted:
                 return "The username is blacklisted"
             }
