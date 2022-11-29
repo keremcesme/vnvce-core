@@ -1,7 +1,7 @@
 
 import Foundation
 
-public struct CheckUsernamePayload {
+public final class CheckUsernamePayload {
     public struct V1: Codable {
         public let clientID: String
         public let username: String
