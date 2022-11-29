@@ -3,10 +3,16 @@ import Foundation
 
 public final class SMSOTPModel {
     
-    struct V1: Codable {
+    public struct V1: Codable {
         let otpID: String
         let createdAt: TimeInterval
         let expireAt: TimeInterval
+        
+        public init(otpID: String, createdAt: TimeInterval, expireAt: TimeInterval) {
+            self.otpID = otpID
+            self.createdAt = createdAt
+            self.expireAt = expireAt
+        }
         
         public enum CodingKeys: String, CodingKey {
             case otpID = "otp_id"
