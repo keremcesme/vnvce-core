@@ -6,7 +6,7 @@ public struct PhoneNumberAvailability {
         case exist
         case notUsed
         case otpExpected
-        case otpExpectedBySameUser
+        case otpExpectedBySameUser(otp: SMSOTPModel.V1?)
         case blacklisted
         
         public var description: String {
