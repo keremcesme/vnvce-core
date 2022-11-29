@@ -5,8 +5,8 @@ public struct PhoneNumberAvailability {
     
     public struct V1: Codable {
         
-        let otp: SMSOTPModel.V1?
-        let availability: Availability
+        public let otp: SMSOTPModel.V1?
+        public let availability: Availability
         
         public init(otp: SMSOTPModel.V1? = nil, availability: Availability) {
             self.otp = otp
