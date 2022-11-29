@@ -2,12 +2,30 @@
 import Foundation
 
 public struct PhoneNumberAvailability {
-    public enum V1: Codable {
+    public enum V1: Codable, Equatable {
+        
         case exist
         case notUsed
         case otpExpected
-        case otpExpectedBySameUser(otp: SMSOTPModel.V1?)
+        case otpExpectedBySameUser(_ otp: SMSOTPModel.V1?)
         case blacklisted
+        
+        public static func == (lhs: PhoneNumberAvailability.V1, rhs: PhoneNumberAvailability.V1) -> Bool {
+            switch (lhs, rhs) {
+            case (.exist, .exist):
+                return true
+            case (.notUsed, .notUsed):
+                return true
+            case (.otpExpected, .otpExpected):
+                return true
+            case (let .otpExpectedBySameUser(lhsType), let .otpExpectedBySameUser(rhsType)):
+                return lhsType == rhsType
+            case (.blacklisted, .blacklisted):
+                return true
+            default:
+                return false
+            }
+        }
         
         public var description: String {
             switch self {

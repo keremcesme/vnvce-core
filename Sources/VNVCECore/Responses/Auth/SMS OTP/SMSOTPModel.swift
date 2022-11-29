@@ -3,7 +3,7 @@ import Foundation
 
 public final class SMSOTPModel {
     
-    public struct V1: Codable {
+    public struct V1: Codable, Equatable {
         let otpID: String
         let createdAt: TimeInterval
         let expireAt: TimeInterval
