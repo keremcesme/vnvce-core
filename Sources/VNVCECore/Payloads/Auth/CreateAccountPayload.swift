@@ -1,7 +1,7 @@
 
 import Foundation
 
-final class CreateAccountPayload {
+public final class CreateAccountPayload {
     public struct V1: Codable {
         public let username: String
         public let clientID: String
