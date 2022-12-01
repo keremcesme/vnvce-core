@@ -4,7 +4,7 @@ import Foundation
 public final class UserModel {
     public final class V1 {
         
-        public struct Public {
+        public struct Public: Codable {
             public let id: UUID
             public let username: String
             
@@ -12,7 +12,7 @@ public final class UserModel {
             public let biography: String?
         }
         
-        public struct Private {
+        public struct Private: Codable {
             public let id: UUID
             public let username: String
             public let phoneNumber: String
