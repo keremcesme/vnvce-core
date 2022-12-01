@@ -14,7 +14,7 @@ final class CreateAccountPayload {
             self.phoneNumber = phoneNumber
             self.code = code
         }
-        
+    
         enum CodingKeys: String, CodingKey {
             case username = "username"
             case clientID = "client_id"
