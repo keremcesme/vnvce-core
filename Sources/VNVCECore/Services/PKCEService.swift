@@ -2,10 +2,10 @@
 import Foundation
 import CryptoKit
 
-actor PKCEService {
-    typealias PKCECode = String
+public actor PKCEService {
+    public typealias PKCECode = String
 
-    enum PKCEError: Error {
+    public enum PKCEError: Error {
         case failedToGenerateRandomOctets
         case improperlyFormattedVerifier
     }
