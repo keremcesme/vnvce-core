@@ -10,6 +10,7 @@ actor PKCEService {
         case improperlyFormattedVerifier
     }
 
+    
     /// A transformation of the codeVerifier, as defined in
     /// [Section 4.2](https://datatracker.ietf.org/doc/html/rfc7636#section-4.2)
     /// of the PKCE standard.
