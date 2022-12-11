@@ -2,13 +2,15 @@
 import Foundation
 import CryptoKit
 
-public struct PKCEService {
+public actor PKCEService {
     public typealias PKCECode = String
 
     public enum PKCEError: Error {
         case failedToGenerateRandomOctets
         case improperlyFormattedVerifier
     }
+    
+    public init() {}
 
     
     /// A transformation of the codeVerifier, as defined in
