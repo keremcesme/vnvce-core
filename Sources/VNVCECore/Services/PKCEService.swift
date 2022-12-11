@@ -2,7 +2,7 @@
 import Foundation
 import CryptoKit
 
-public actor PKCEService {
+public struct PKCEService {
     public typealias PKCECode = String
 
     public enum PKCEError: Error {
