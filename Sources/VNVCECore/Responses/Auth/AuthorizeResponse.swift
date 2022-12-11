@@ -9,7 +9,7 @@ public final class AuthorizeResponse {
             self.authCode = authCode
         }
         
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case authCode = "auth_code"
         }
     }
