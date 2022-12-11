@@ -11,12 +11,11 @@ public actor PKCEService {
     }
     
     public init() {}
-
     
     /// A transformation of the codeVerifier, as defined in
     /// [Section 4.2](https://datatracker.ietf.org/doc/html/rfc7636#section-4.2)
     /// of the PKCE standard.
-    public func codeChallenge(fromVerifier verifier: PKCECode) throws -> PKCECode {
+    public func generateCodeChallenge(fromVerifier verifier: PKCECode) throws -> PKCECode {
         guard let verifierData = verifier.data(using: .ascii) else {
             throw PKCEError.improperlyFormattedVerifier
         }
@@ -40,6 +39,15 @@ public actor PKCEService {
         } catch {
             return generateBase64RandomString(ofLength: 43)
         }
+    }
+    
+    public func verifyCodeChallenge(verifier: PKCECode, challenge: PKCECode) throws -> Bool {
+        let newChallenge = try generateCodeChallenge(fromVerifier: verifier)
+        guard newChallenge == challenge else {
+            return false
+        }
+        
+        return true
     }
 
     private func generateCryptographicallySecureRandomOctets(count: Int) throws -> [UInt8] {
