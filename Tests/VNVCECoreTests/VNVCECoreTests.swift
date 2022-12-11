@@ -1,5 +1,5 @@
 import XCTest
-@testable import vnvce_core
+@testable import VNVCECore
 
 final class vnvce_coreTests: XCTestCase {
     func testExample() throws {
