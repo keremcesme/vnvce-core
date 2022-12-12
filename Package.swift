@@ -12,13 +12,13 @@ let package = Package(
             targets: ["VNVCECore"]),
     ],
     dependencies: [
-//        .package(url: "https://github.com/apple/swift-crypto.git", from: "2.2.2")
+        .package(url: "https://github.com/apple/swift-crypto.git", from: "2.2.2")
     ],
     targets: [
         .target(
             name: "VNVCECore",
             dependencies: [
-//                .product(name: "Crypto", package: "swift-crypto")
+                .product(name: "Crypto", package: "swift-crypto")
             ]),
         .testTarget(
             name: "VNVCECoreTests",

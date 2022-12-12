@@ -1,6 +1,6 @@
 
 import Foundation
-import CryptoKit
+import Crypto
 
 public actor PKCEService {
     public typealias PKCECode = String
