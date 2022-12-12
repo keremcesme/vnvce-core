@@ -23,23 +23,6 @@ public actor PKCEService {
         let challengeBase64Encoded = Data(challengeHashed).base64URLEncodedString
         return challengeBase64Encoded
     }
-
-    ///
-    /// Generates a random code verifier as defined in
-    /// [Seciton 4.1 of the PKCE standard](https://datatracker.ietf.org/doc/html/rfc7636#section-4.1).
-    ///
-    /// This method first attempts to use CryptoKit to generate random bytes.
-    /// If it fails to generate those random bytes, it falls back on a generic
-    /// Base64 random string generator.
-    ///
-    public func generateCodeVerifier() -> PKCECode {
-        do {
-            let rando = try generateCryptographicallySecureRandomOctets(count: 32)
-            return Data(bytes: rando, count: rando.count).base64URLEncodedString
-        } catch {
-            return generateBase64RandomString(ofLength: 43)
-        }
-    }
     
     public func verifyCodeChallenge(verifier: PKCECode, challenge: PKCECode) throws -> Bool {
         let newChallenge = try generateCodeChallenge(fromVerifier: verifier)
@@ -50,6 +33,25 @@ public actor PKCEService {
         return true
     }
 
+    ///
+    /// Generates a random code verifier as defined in
+    /// [Seciton 4.1 of the PKCE standard](https://datatracker.ietf.org/doc/html/rfc7636#section-4.1).
+    ///
+    /// This method first attempts to use CryptoKit to generate random bytes.
+    /// If it fails to generate those random bytes, it falls back on a generic
+    /// Base64 random string generator.
+    ///
+#if os(iOS)
+    public func generateCodeVerifier() -> PKCECode {
+        do {
+            let rando = try generateCryptographicallySecureRandomOctets(count: 32)
+            return Data(bytes: rando, count: rando.count).base64URLEncodedString
+        } catch {
+            return generateBase64RandomString(ofLength: 43)
+        }
+    }
+    
+    
     private func generateCryptographicallySecureRandomOctets(count: Int) throws -> [UInt8] {
         var octets = [UInt8](repeating: 0, count: count)
         let status = SecRandomCopyBytes(kSecRandomDefault, octets.count, &octets)
@@ -59,11 +61,12 @@ public actor PKCEService {
             throw PKCEError.failedToGenerateRandomOctets
         }
     }
-
+    
     private func generateBase64RandomString(ofLength length: UInt8) -> PKCECode {
         let base64 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         return String((0..<length).map{ _ in base64.randomElement()! })
     }
+#endif
 }
 
 extension Data {
