@@ -1,8 +1,14 @@
 
 import Foundation
 
-public enum DeviceOS: String, Codable {
+public enum ClientOS: String, Codable {
     case ios, android
     
-    public static let schema =  "device_os"
+    public static let schema =  "client_os"
+}
+
+extension String {
+    var convertClientOS: ClientOS? {
+        ClientOS(rawValue: self)
+    }
 }
