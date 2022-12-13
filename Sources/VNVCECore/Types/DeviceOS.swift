@@ -7,7 +7,7 @@ public enum ClientOS: String, Codable {
     public static let schema =  "client_os"
 }
 
-extension String {
+public extension String {
     var convertClientOS: ClientOS? {
         ClientOS(rawValue: self)
     }
