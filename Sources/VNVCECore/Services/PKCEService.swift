@@ -24,7 +24,7 @@ public actor PKCEService {
         return challengeBase64Encoded
     }
     
-    public func verifyCodeChallenge(verifier: PKCECode, challenge: PKCECode) throws -> Bool {
+    public func verifyCodeChallenge(_ verifier: PKCECode, _ challenge: PKCECode) throws -> Bool {
         let newChallenge = try generateCodeChallenge(fromVerifier: verifier)
         guard newChallenge == challenge else {
             return false
