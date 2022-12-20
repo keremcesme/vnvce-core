@@ -1,7 +1,9 @@
 
 import Foundation
 
-public final class TokenPayload {
+public typealias ReAuthorizePayload = GenerateTokensPayload
+
+public final class GenerateTokensPayload {
     public struct V1: Codable {
         public let authCode: String
         public let codeVerifier: String
