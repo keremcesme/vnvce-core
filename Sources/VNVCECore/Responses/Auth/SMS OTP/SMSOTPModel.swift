@@ -5,11 +5,11 @@ public final class SMSOTPModel {
     
     public struct V1: Codable {
         let otpID: String
-        let otpToken: String
+        let otpToken: String?
         let createdAt: TimeInterval
         let expireAt: TimeInterval
         
-        public init(otpID: String, otpToken: String, createdAt: TimeInterval, expireAt: TimeInterval) {
+        public init(otpID: String, otpToken: String? = nil, createdAt: TimeInterval, expireAt: TimeInterval) {
             self.otpID = otpID
             self.otpToken = otpToken
             self.createdAt = createdAt
