@@ -1,7 +1,7 @@
 
 import Foundation
 
-public final class TokenResponse {
+public final class TokensResponse {
     public struct V1: Codable {
         public let accessToken: String
         public let refreshToken: String
