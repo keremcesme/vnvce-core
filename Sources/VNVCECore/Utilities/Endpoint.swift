@@ -1,20 +1,22 @@
 
 import Foundation
 
+public enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case patch = "PATCH"
+    case delete = "DELETE"
+}
+
 public struct Endpoint {
+    public static let shared = Endpoint()
     
-    public enum HTTPMethod: String {
-        case get
-        case post
-        case put
-        case patch
-        case delete
-    }
     
     private let scheme = "https"
     private let host = "vnvce.com"
     
-    public static func makeURL(_ route: String, params: [URLQueryItem] = [], host: String? = nil) -> URL {
+    public func makeURL(_ route: String, params: [URLQueryItem] = [], host: String? = nil) -> URL {
         var components = URLComponents()
         components.scheme = scheme
         components.host = host ?? self.host
