@@ -4,9 +4,9 @@ import Foundation
 public final class OTPResponse {
     
     public struct V1: Codable {
-        let otp: OTP
-        let createdAt: TimeInterval
-        let expireAt: TimeInterval
+        public let otp: OTP
+        public let createdAt: TimeInterval
+        public let expireAt: TimeInterval
         
         public init(otp: OTP, createdAt: TimeInterval, expireAt: TimeInterval) {
             self.otp = otp
@@ -21,8 +21,8 @@ public final class OTPResponse {
         }
         
         public struct OTP: Codable {
-            let id: String
-            let token: String
+            public let id: String
+            public let token: String
             public init(id: String, token: String) {
                 self.id = id
                 self.token = token
