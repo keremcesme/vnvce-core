@@ -27,5 +27,7 @@ public final class AuthAPI {
         public let reauthorize = api + token + "reauthorize".path
         public let generateTokens = api + token + "generate-tokens".path
         public let generateAccessToken = api + token + "generate-access-token".path
+        
+        public init() {}
     }
 }
