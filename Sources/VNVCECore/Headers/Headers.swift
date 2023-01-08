@@ -1,8 +1,8 @@
 
 import Foundation
 
-public struct Headers {
-    public static let acceptVersion = "Accept-version"
+public struct VNVCEHeaders {
+    public static let acceptVersion = "X-Accept-version"
     
     public static let refreshToken = "X-Auth-Refresh-Token"
     
