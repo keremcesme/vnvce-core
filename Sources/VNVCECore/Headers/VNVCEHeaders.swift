@@ -12,5 +12,7 @@ public struct VNVCEHeaders {
     public static let authID = "X-Auth-ID"
     public static let userID = "X-User-ID"
     public static let otpID = "X-OTP-ID"
+    
+    public static let authorization = "Authorization"
 }
 
