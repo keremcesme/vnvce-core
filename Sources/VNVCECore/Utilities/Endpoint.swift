@@ -14,7 +14,7 @@ public struct Endpoint {
     private let scheme = "https"
     private let host = "vnvce.com"
     
-    public func makeURL(_ route: String, params: [URLQueryItem] = [], host: String? = nil) -> URL {
+    public static func makeURL(_ route: String, params: [URLQueryItem] = [], host: String? = nil) -> URL {
         var components = URLComponents()
         components.scheme = scheme
         components.host = host ?? self.host
