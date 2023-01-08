@@ -2,36 +2,38 @@
 import Foundation
 
 public struct Endpoint {
+    
     public enum HTTPMethod: String {
-        case GET
-        case POST
-        case PUT
-        case PATCH
-        case DELETE
+        case get
+        case post
+        case put
+        case patch
+        case delete
     }
-    
-    public static let shared = Endpoint()
-    
-    public let routes = Routes.shared
-    
-    
-    
-    
-    
-    
     
     private let scheme = "https"
     private let host = "vnvce.com"
-    private let apiPath = "/api/"
     
-    public var baseURL: URL {
-        
+    public func makeURL(_ route: String, params: [URLQueryItem] = [], host: String? = nil) -> URL {
         var components = URLComponents()
-          components.scheme = scheme
-          components.host = host
-          components.path += apiPath
+        components.scheme = scheme
+        components.host = host ?? self.host
+        components.path += "api".path
+        components.path += route.path
+        
+        if !params.isEmpty {
+            components.queryItems = params
+        }
+        
         return components.url!
     }
     
     
+    
+}
+
+extension String {
+    var path: String {
+        return "/\(self)"
+    }
 }
