@@ -3,6 +3,8 @@ import Foundation
 
 public final class AuthAPI {
     public struct V1 {
+        public static let shared = V1()
+        
         private static let api = "auth"
         
         private static let check = "check".path
