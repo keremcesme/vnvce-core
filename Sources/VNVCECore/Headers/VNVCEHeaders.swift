@@ -19,5 +19,12 @@ public struct VNVCEHeaders {
     public static let otpID = "X-OTP-ID"
     
     public static let authorization = "Authorization"
+    
+    public static let contentType = "Content-Type"
+}
+
+public enum ContentType: String {
+    case json = "application/json"
+    case urlEncoded = "application/x-www-form-urlencoded"
 }
 
