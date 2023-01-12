@@ -34,5 +34,6 @@ public final class CreateAccountPayload {
             public let countryCode: String
             public let nationalNumber: Int
         }
+        
     }
 }
