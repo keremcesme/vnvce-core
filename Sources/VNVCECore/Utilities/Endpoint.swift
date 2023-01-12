@@ -1,12 +1,12 @@
 
 import Foundation
 
-public enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case patch = "PATCH"
-    case delete = "DELETE"
+public struct HTTPMethod {
+    public static let get = "GET"
+    public static let post = "POST"
+    public static let put = "PUT"
+    public static let patch = "PATCH"
+    public static let delete = "DELETE"
 }
 
 public struct Endpoint {
