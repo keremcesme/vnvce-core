@@ -34,6 +34,15 @@ public final class CreateAccountPayload {
             public let countryCode: String
             public let nationalNumber: Int
             
+            public init(
+                country: String,
+                countryCode: String,
+                nationalNumber: Int
+            ) {
+                self.country = country
+                self.countryCode = countryCode
+                self.nationalNumber = nationalNumber
+            }
             enum CodingKeys: String, CodingKey {
                 case country
                 case countryCode = "country_code"
