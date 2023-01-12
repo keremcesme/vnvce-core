@@ -33,6 +33,12 @@ public final class CreateAccountPayload {
             public let country: String
             public let countryCode: String
             public let nationalNumber: Int
+            
+            enum CodingKeys: String, CodingKey {
+                case country
+                case countryCode = "country_code"
+                case nationalNumber = "national_number"
+            }
         }
         
     }
