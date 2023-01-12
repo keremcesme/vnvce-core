@@ -31,12 +31,12 @@ public final class CreateAccountPayload {
         
         public struct PhoneNumber: Codable {
             public let country: String
-            public let countryCode: String
+            public let countryCode: Int
             public let nationalNumber: Int
             
             public init(
                 country: String,
-                countryCode: String,
+                countryCode: Int,
                 nationalNumber: Int
             ) {
                 self.country = country
