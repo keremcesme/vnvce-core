@@ -42,7 +42,7 @@ public struct Endpoint {
         }
         components.path += "api".path
         components.path += api.rawValue.path
-        components.path += route.path
+        components.path += route
         
         if !params.isEmpty {
             components.queryItems = params
