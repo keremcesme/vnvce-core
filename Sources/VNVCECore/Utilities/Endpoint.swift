@@ -6,6 +6,11 @@ public enum RunMode {
     case dev(_ host: String)
 }
 
+public enum API: String {
+    case auth = "auth"
+    case resource = "resource"
+}
+
 public struct HTTPMethod {
     public static let get = "GET"
     public static let post = "POST"
@@ -26,7 +31,7 @@ public struct Endpoint {
         self.run = run
     }
     
-    public func makeURL(_ route: String, params: [URLQueryItem] = []) -> URL {
+    public func makeURL(_ route: String, params: [URLQueryItem] = [], api: API = .resource) -> URL {
         var components = URLComponents()
         components.scheme = scheme
         switch run {
@@ -36,6 +41,7 @@ public struct Endpoint {
             components.host = host
         }
         components.path += "api".path
+        components.path += api.rawValue.path
         components.path += route.path
         
         if !params.isEmpty {
