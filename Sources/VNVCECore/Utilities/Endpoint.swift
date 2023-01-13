@@ -1,6 +1,11 @@
 
 import Foundation
 
+public enum Environment {
+    case prod
+    case dev
+}
+
 public struct HTTPMethod {
     public static let get = "GET"
     public static let post = "POST"
@@ -10,11 +15,16 @@ public struct HTTPMethod {
 }
 
 public struct Endpoint {
-    public static let shared = Endpoint()
-    
+    public static let shared = Endpoint(env: .dev)
     
     private let scheme = "https"
     private let host = "vnvce.com"
+    
+    public var env: Environment
+    
+    public init(env: Environment) {
+        self.env = env
+    }
     
     public func makeURL(_ route: String, params: [URLQueryItem] = [], host: String? = nil) -> URL {
         var components = URLComponents()
