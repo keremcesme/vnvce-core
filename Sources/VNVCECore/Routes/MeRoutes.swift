@@ -4,7 +4,7 @@ import Foundation
 public final class MeRoutes {
     public struct V1 {
         public static let shared = V1()
-        private static let me = "me"
+        private static let me = "me".path
         private static let edit = "edit".path
         
         // Edit
