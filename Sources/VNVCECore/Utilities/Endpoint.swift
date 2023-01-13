@@ -26,10 +26,10 @@ public struct Endpoint {
         self.env = env
     }
     
-    public func makeURL(_ route: String, params: [URLQueryItem] = [], host: String? = nil) -> URL {
+    public func makeURL(_ route: String, params: [URLQueryItem] = []) -> URL {
         var components = URLComponents()
         components.scheme = scheme
-        components.host = host ?? self.host
+        components.host = host
         components.path += "api".path
         components.path += route.path
         
