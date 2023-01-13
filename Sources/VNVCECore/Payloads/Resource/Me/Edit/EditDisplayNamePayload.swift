@@ -3,9 +3,9 @@ import Foundation
 
 public final class EditDisplayNamePayload {
     public struct V1: Codable {
-        public let displayName: String
+        public let displayName: String?
         
-        public init(_ displayName: String) {
+        public init(_ displayName: String?) {
             self.displayName = displayName
         }
         
