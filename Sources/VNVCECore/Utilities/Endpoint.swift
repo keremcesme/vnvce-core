@@ -3,7 +3,7 @@ import Foundation
 
 public enum Environment {
     case prod
-    case dev
+    case dev(_ host: String)
 }
 
 public struct HTTPMethod {
@@ -15,7 +15,7 @@ public struct HTTPMethod {
 }
 
 public struct Endpoint {
-    public static let shared = Endpoint(env: .dev)
+    public static let shared = Endpoint(env: .prod)
     
     private let scheme = "https"
     private let host = "vnvce.com"
@@ -29,7 +29,12 @@ public struct Endpoint {
     public func makeURL(_ route: String, params: [URLQueryItem] = []) -> URL {
         var components = URLComponents()
         components.scheme = scheme
-        components.host = host
+        switch env {
+        case .prod:
+            components.host = host
+        case let .dev(host):
+            components.host = host
+        }
         components.path += "api".path
         components.path += route.path
         
