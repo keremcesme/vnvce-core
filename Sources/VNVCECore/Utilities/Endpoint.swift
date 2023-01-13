@@ -1,7 +1,7 @@
 
 import Foundation
 
-public enum Environment {
+public enum RunMode {
     case prod
     case dev(_ host: String)
 }
@@ -15,21 +15,21 @@ public struct HTTPMethod {
 }
 
 public struct Endpoint {
-    public static let shared = Endpoint(env: .prod)
+    public static let shared = Endpoint(run: .prod)
     
     private let scheme = "https"
     private let host = "vnvce.com"
     
-    public var env: Environment
+    public var run: RunMode
     
-    public init(env: Environment) {
-        self.env = env
+    public init(run: RunMode) {
+        self.run = run
     }
     
     public func makeURL(_ route: String, params: [URLQueryItem] = []) -> URL {
         var components = URLComponents()
         components.scheme = scheme
-        switch env {
+        switch run {
         case .prod:
             components.host = host
         case let .dev(host):
