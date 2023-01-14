@@ -28,6 +28,8 @@ public final class AuthRoutes {
         public let generateTokens = token + "generate-tokens".path
         public let generateAccessToken = token + "generate-access-token".path
         
+        public let logout = "logout".path
+        
         public init() {}
     }
 }
