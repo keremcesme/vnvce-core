@@ -1,8 +1,8 @@
 
 import Foundation
 
-protocol PublicUser: Codable {}
-protocol PrivateUser: Codable {}
+public protocol PublicUser: Codable {}
+public protocol PrivateUser: Codable {}
 
 public final class User {
     public final class V1 {
