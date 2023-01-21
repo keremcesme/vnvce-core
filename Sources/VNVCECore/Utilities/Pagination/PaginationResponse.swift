@@ -10,10 +10,15 @@ public struct PaginationParams {
         self.per = per
     }
     
-    public var raw: String {
-        return "?page=\(page)&per=\(per)".path
+    public var params: [URLQueryItem] {
+        return [
+            .init(name: "page", value: "\(page)"),
+            .init(name: "per", value: "\(per)")
+        ]
     }
 }
+
+
 
 public struct PageMetadata: Codable, Hashable {
     public var page, per, total: Int
