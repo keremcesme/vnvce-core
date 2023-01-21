@@ -1,6 +1,20 @@
 
 import Foundation
 
+public struct PaginationParams {
+    public var page: Int
+    public var per: Int
+    
+    public init(page: Int, per: Int) {
+        self.page = page
+        self.per = per
+    }
+    
+    public var raw: String {
+        return "?page=\(page)&per=\(per)".path
+    }
+}
+
 public struct PageMetadata: Codable, Hashable {
     public var page, per, total: Int
     

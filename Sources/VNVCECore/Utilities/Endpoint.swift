@@ -31,7 +31,7 @@ public struct Endpoint {
         self.run = run
     }
     
-    public func makeURL(_ route: String, params: [URLQueryItem] = [], api: API = .resource) -> URL {
+    public func makeURL(_ route: String, params: [URLQueryItem] = [], pagination: PaginationParams? = nil, api: API = .resource) -> URL {
         var components = URLComponents()
         components.scheme = scheme
         switch run {
@@ -48,11 +48,13 @@ public struct Endpoint {
             components.queryItems = params
         }
         
+        if let pagination {
+            components.path += pagination.raw
+        }
+        
+        
         return components.url!
     }
-    
-    
-    
 }
 
 extension String {
