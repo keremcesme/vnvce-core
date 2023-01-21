@@ -20,14 +20,14 @@ public final class User {
         }
         public struct Private: Codable {
             public let id: UUID
-            public let username: String
+            public let username: Username
             public let phoneNumber: String
             public let displayName: String?
             public let profilePicture: ProfilePicture?
             public let dateOfBirthYear: Int
             public let createdAt: TimeInterval
             
-            public init(id: UUID, username: String, phoneNumber: String, displayName: String?, profilePicture: ProfilePicture?, dateOfBirthYear: Int, createdAt: TimeInterval) {
+            public init(id: UUID, username: Username, phoneNumber: String, displayName: String?, profilePicture: ProfilePicture?, dateOfBirthYear: Int, createdAt: TimeInterval) {
                 self.id = id
                 self.username = username
                 self.phoneNumber = phoneNumber
@@ -38,14 +38,23 @@ public final class User {
             }
             
             public struct ProfilePicture: Codable {
-                public let id: UUID
                 public let url: String
                 public let name: String
                 
-                public init(id: UUID, url: String, name: String) {
-                    self.id = id
+                public init(url: String, name: String) {
                     self.url = url
                     self.name = name
+                }
+            }
+            
+            public struct Username: Codable {
+                public let username: String
+                public let modifiedAt: TimeInterval
+                
+                public init(username: String,
+                            modifiedAt: TimeInterval) {
+                    self.username = username
+                    self.modifiedAt = modifiedAt
                 }
             }
         }
