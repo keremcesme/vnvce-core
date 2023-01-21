@@ -1,12 +1,9 @@
 
 import Foundation
 
-public protocol PublicUser: Codable {}
-public protocol PrivateUser: Codable {}
-
 public final class User {
     public final class V1 {
-        public struct Public: PublicUser {
+        public struct Public: Codable {
             public let id: UUID
             public let username: String
             public let displayName: String?
@@ -21,7 +18,7 @@ public final class User {
                 self.dateOfBirthYear = dateOfBirthYear
             }
         }
-        public struct Private: PrivateUser {
+        public struct Private: Codable {
             public let id: UUID
             public let username: Username.V1
             public let phoneNumber: String
