@@ -7,6 +7,7 @@ public final class MeRoutes {
         private static let me = "me".path
         private static let edit = "edit".path
         
+        public let profile = me + "profile".path
         // Edit
         public let editDisplayName = me + edit + "display-name".path
         public let editBiography = me + edit + "biography".path
