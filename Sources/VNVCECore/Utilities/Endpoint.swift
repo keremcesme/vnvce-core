@@ -48,9 +48,9 @@ public struct Endpoint {
             components.queryItems = params
         }
         
-        if let pagination {
-            components.path += "?page=\(pagination.page)&per=\(pagination.per)".path
-        }
+//        if let pagination {
+//            components.path += "?page=\(pagination.page)&per=\(pagination.per)".path
+//        }
         
         
         return components.url!
