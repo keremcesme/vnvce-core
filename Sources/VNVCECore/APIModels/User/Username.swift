@@ -11,5 +11,10 @@ public final class Username {
             self.username = username
             self.modifiedAt = modifiedAt
         }
+        
+        enum CodingKeys: String, CodingKey {
+            case username
+            case modifiedAt = "modified_at"
+        }
     }
 }
