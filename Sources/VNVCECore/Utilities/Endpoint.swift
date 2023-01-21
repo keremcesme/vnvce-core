@@ -49,7 +49,7 @@ public struct Endpoint {
         }
         
         if let pagination {
-            components.path += pagination.raw
+            components.path += "?page=\(pagination.page)&per=\(pagination.per)".path
         }
         
         
