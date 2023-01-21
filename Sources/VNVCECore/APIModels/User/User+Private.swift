@@ -8,7 +8,7 @@
 import Foundation
 
 extension User.V1 {
-    public struct Private: Codable {
+    public struct Private: Codable, Equatable, Hashable {
         public let id: UUID
         public let username: Username.V1
         public let phoneNumber: String

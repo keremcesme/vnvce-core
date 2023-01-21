@@ -2,7 +2,7 @@
 import Foundation
 
 public final class Username {
-    public struct V1: Codable {
+    public struct V1: Codable, Equatable, Hashable {
         public let username: String
         public let modifiedAt: TimeInterval
         

@@ -4,7 +4,7 @@ import Foundation
 public final class User {
     public final class V1 {
         
-        public struct Public: Codable {
+        public struct Public: Codable, Equatable, Hashable {
             public let id: UUID
             public let username: String
             public let displayName: String?
