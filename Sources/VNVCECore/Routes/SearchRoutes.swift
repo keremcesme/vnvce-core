@@ -9,3 +9,4 @@ public final class SearchRoutes {
         public let searchUser = search + "user".path
     }
 }
+
