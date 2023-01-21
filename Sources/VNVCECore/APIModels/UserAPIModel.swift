@@ -3,7 +3,6 @@ import Foundation
 
 public final class User {
     public final class V1 {
-        
         public struct Public: Codable {
             public let id: UUID
             public let username: String
@@ -19,7 +18,6 @@ public final class User {
                 self.dateOfBirthYear = dateOfBirthYear
             }
         }
-        
         public struct Private: Codable {
             public let id: UUID
             public let username: String
