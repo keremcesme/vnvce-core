@@ -7,6 +7,7 @@ public final class SearchRoutes {
         private static let search = "search".path
         
         public let searchUser = search + "user".path
+        public let fromContacts = search + "from-contacts".path
     }
 }
 
