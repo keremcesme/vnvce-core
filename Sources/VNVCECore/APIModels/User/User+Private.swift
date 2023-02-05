@@ -10,10 +10,10 @@ import Foundation
 extension User.V1 {
     public struct Private: Codable, Equatable, Hashable {
         public let id: UUID
-        public let username: Username.V1
-        public let phoneNumber: String
-        public let displayName: String?
-        public let profilePicture: ProfilePicture.V1?
+        public var username: Username.V1
+        public var phoneNumber: String
+        public var displayName: String?
+        public var profilePicture: ProfilePicture.V1?
         public let dateOfBirthYear: Int
         public let notificationToken: String?
         public let createdAt: TimeInterval
