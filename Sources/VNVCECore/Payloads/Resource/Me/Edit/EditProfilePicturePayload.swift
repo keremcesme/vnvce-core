@@ -3,9 +3,9 @@ import Foundation
 
 public final class EditProfilePicturePayload {
     public struct V1: Codable {
-        public let url: String
+        public let url: String?
         
-        public init(url: String) {
+        public init(url: String? = nil) {
             self.url = url
         }
         
