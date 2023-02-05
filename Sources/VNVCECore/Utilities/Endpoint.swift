@@ -24,6 +24,7 @@ public struct Endpoint {
     
     private let scheme = "https"
     private let host = "vnvce.com"
+    private let firebaseStorageHost = "gs://vnvce-"
     
     public var run: RunMode
     
@@ -56,9 +57,12 @@ public struct Endpoint {
             }
             
         }
-        
-        
         return components.url!
+    }
+    
+    public func makeFirebaseStorageURL(_ route: String) -> String {
+        
+        return firebaseStorageHost + route
     }
 }
 
