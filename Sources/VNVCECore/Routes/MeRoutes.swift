@@ -11,5 +11,6 @@ public final class MeRoutes {
         // Edit
         public let editDisplayName = me + edit + "display-name".path
         public let editBiography = me + edit + "biography".path
+        public let editProfilePicture = me + edit + "profile-picture".path
     }
 }
