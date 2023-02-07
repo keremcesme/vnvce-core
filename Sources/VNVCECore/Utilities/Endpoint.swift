@@ -55,8 +55,8 @@ public struct Endpoint {
             } else {
                 components.queryItems! += pagination.params
             }
-            
         }
+        
         return components.url!
     }
     
