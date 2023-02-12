@@ -30,4 +30,5 @@ public final class Transaction {
         
         public let appAccountToken: UUID?
     }
+    
 }
