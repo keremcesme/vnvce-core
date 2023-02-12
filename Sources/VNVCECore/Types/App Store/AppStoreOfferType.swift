@@ -2,7 +2,7 @@
 import Foundation
 
 public enum AppStoreOfferType: String, Codable {
-    case introductory, promotional, code
+    case introductory, promotional, code, none
     
     public static let schema =  "appstore_offer_type"
 }
@@ -17,7 +17,7 @@ public extension UInt32 {
         case 3:
             return .code
         default:
-            throw ConvertOfferTypeError.unavailableOffer
+            return .none
         }
     }
     
