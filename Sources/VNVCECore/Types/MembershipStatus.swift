@@ -57,7 +57,7 @@ public enum MembershipStatus: String, Codable {
     // NONE
     case none // DEACTIVE
     
-    public static let schema =  "appstore_membership_status_type"
+    public static let schema =  "membership_status_type"
 }
 
 public extension MembershipStatus {
