@@ -54,6 +54,9 @@ public enum MembershipStatus: String, Codable {
     // LIFETIME MEMBERSHIP
     case lifetime // ACTIVE
     
+    // NONE
+    case none // DEACTIVE
+    
     public static let schema =  "appstore_membership_status_type"
 }
 
