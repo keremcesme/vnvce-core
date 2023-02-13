@@ -55,7 +55,7 @@ public enum MembershipStatus: String, Codable {
     case lifetime // ACTIVE
     
     // NONE
-    case none // DEACTIVE
+    case `none` // DEACTIVE
     
     public static let schema =  "membership_status_type"
 }
