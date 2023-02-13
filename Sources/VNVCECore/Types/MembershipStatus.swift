@@ -1,7 +1,7 @@
 
 import Foundation
 
-public enum AppStoreMembershipStatus: String, Codable {
+public enum MembershipStatus: String, Codable {
     // SUBSCRIBED
     case initialBuy // ACTIVE
     case resubscribe // ACTIVE
