@@ -19,7 +19,6 @@ public enum AppStoreMembershipStatus: String, Codable {
     case autoRenewEnabled // ACTIVE
     case autoRenewDisabled // ACTIVE
     
-    
     // DID_RENEW
     case didRenew // ACTIVE
     case didRenewWithBillingRecovery // ACTIVE
