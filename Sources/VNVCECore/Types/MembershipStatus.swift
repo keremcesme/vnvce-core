@@ -57,7 +57,7 @@ public enum MembershipStatus: String, Codable {
     public static let schema =  "appstore_membership_status_type"
 }
 
-public extension AppStoreMembershipStatus {
+public extension MembershipStatus {
     var isActive: Bool {
         switch self {
         case .initialBuy, .resubscribe, .gracePeriod, .renewalPrefUpgraded, .renewalPrefDowngraded, .renewalPrefGivedUp, .autoRenewEnabled, .autoRenewDisabled, .didRenew, .didRenewWithBillingRecovery, .offerRedeemedForInitialBuy, .offerRedeemedForResubscribe, .offerRedeemedForUpgrade, .offerRedeemedForDowngrade, .priceIncreaseAccepted, .priceIncreasePending, .consumptionRequested, .refundDeclined, .lifetime:
