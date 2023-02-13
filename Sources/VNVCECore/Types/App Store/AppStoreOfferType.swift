@@ -2,7 +2,7 @@
 import Foundation
 
 public enum AppStoreOfferType: String, Codable {
-    case introductory, promotional, code, none
+    case introductory, promotional, code, `none`
     
     public static let schema =  "appstore_offer_type"
 }
