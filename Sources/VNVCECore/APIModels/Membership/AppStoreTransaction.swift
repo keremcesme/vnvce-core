@@ -23,32 +23,12 @@ public final class AppStoreTransaction {
         public let purchasedQuantity: Int
         
         public let offerID: String?
-        public let offerType: AppStoreOfferType
+        public let offerType: AppStoreOfferType?
         
         public let revocationDate: Date?
         public let revocationReason: AppStoreRevocationReason?
         
         public let appAccountToken: UUID?
-        
-        public init(id: UInt64, originalID: UInt64, webOrderLineItemID: String?, appBundleID: String, productID: String, productType: AppStoreProductType, subscriptionGroupID: String?, isUpgraded: Bool, purchaseDate: Date, expirationDate: Date?, ownershipType: AppStoreProductOwnershipType, purchasedQuantity: Int, offerID: String?, offerType: AppStoreOfferType = .none, revocationDate: Date?, revocationReason: AppStoreRevocationReason?, appAccountToken: UUID?) {
-            self.id = id
-            self.originalID = originalID
-            self.webOrderLineItemID = webOrderLineItemID
-            self.appBundleID = appBundleID
-            self.productID = productID
-            self.productType = productType
-            self.subscriptionGroupID = subscriptionGroupID
-            self.isUpgraded = isUpgraded
-            self.purchaseDate = purchaseDate
-            self.expirationDate = expirationDate
-            self.ownershipType = ownershipType
-            self.purchasedQuantity = purchasedQuantity
-            self.offerID = offerID
-            self.offerType = offerType
-            self.revocationDate = revocationDate
-            self.revocationReason = revocationReason
-            self.appAccountToken = appAccountToken
-        }
     }
     
 }
