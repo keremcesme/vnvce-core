@@ -1,7 +1,7 @@
 
 import Foundation
 
-public final class Transaction {
+public final class AppStoreTransaction {
     public struct V1: Codable {
         public let id: UInt64
         public let originalID: UInt64
