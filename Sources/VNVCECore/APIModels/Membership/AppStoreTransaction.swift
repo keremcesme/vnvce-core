@@ -6,6 +6,7 @@ public final class AppStoreTransaction {
         // MARK: Required
         public let id: String
         public let originalID: String
+        public let appAccountToken: UUID
         public let productID: String
         public let appBundleID: String
         public let purchaseDate: Date
