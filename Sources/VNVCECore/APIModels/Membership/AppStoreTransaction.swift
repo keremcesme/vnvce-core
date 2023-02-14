@@ -4,8 +4,8 @@ import Foundation
 public final class AppStoreTransaction {
     public struct V1: Codable {
         // MARK: Required
-        public let id: UInt64
-        public let originalID: UInt64
+        public let id: String
+        public let originalID: String
         public let productID: String
         public let appBundleID: String
         public let purchaseDate: Date
@@ -26,8 +26,6 @@ public final class AppStoreTransaction {
         
         public let revocationDate: Date?
         public let revocationReason: AppStoreRevocationReason?
-        
-        public let appAccountToken: UUID?
         
         public let signedDate: Date
     }
