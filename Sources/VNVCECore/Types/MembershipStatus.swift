@@ -13,7 +13,6 @@ public enum MembershipStatus: String, Codable {
     // DID_CHANGE_RENEWAL_PREF
     case renewalPrefUpgraded // ACTIVE
     case renewalPrefDowngraded // ACTIVE
-    case renewalPrefGivedUp // ACTIVE
     
     // DID_CHANGE_RENEWAL_STATUS
     case autoRenewEnabled // ACTIVE
@@ -28,6 +27,7 @@ public enum MembershipStatus: String, Codable {
     case billingRetryFailed // DEACTIVE
     case priceIncreaseDenied // DEACTIVE
     case productNotForSale // DEACTIVE
+    case expiredOther // DEACTIVE
     
     // GRACE_PERIOD_EXPIRED
     case gracePeriodExpired // DEACTIVE
@@ -37,6 +37,7 @@ public enum MembershipStatus: String, Codable {
     case offerRedeemedForResubscribe // ACTIVE
     case offerRedeemedForUpgrade // ACTIVE
     case offerRedeemedForDowngrade // ACTIVE
+    case offerRedeemedForCurrent // ACTIVE
     
     // PRICE_INCREASE
     case priceIncreaseAccepted // ACTIVE
@@ -51,6 +52,12 @@ public enum MembershipStatus: String, Codable {
     // REFUND_DECLINED
     case refundDeclined // ACTIVE
     
+    // RENEWAL_EXTENDED
+    case renewalExtended // ACTIVE
+    
+    // REVOKE
+    case revoked // DEACTIVE
+    
     // LIFETIME MEMBERSHIP
     case lifetime // ACTIVE
     
@@ -63,7 +70,7 @@ public enum MembershipStatus: String, Codable {
 public extension MembershipStatus {
     var isActive: Bool {
         switch self {
-        case .initialBuy, .resubscribe, .gracePeriod, .renewalPrefUpgraded, .renewalPrefDowngraded, .renewalPrefGivedUp, .autoRenewEnabled, .autoRenewDisabled, .didRenew, .didRenewWithBillingRecovery, .offerRedeemedForInitialBuy, .offerRedeemedForResubscribe, .offerRedeemedForUpgrade, .offerRedeemedForDowngrade, .priceIncreaseAccepted, .priceIncreasePending, .consumptionRequested, .refundDeclined, .lifetime:
+        case .initialBuy, .resubscribe, .gracePeriod, .renewalPrefUpgraded, .renewalPrefDowngraded, .autoRenewEnabled, .autoRenewDisabled, .didRenew, .didRenewWithBillingRecovery, .offerRedeemedForInitialBuy, .offerRedeemedForResubscribe, .offerRedeemedForUpgrade, .offerRedeemedForDowngrade, .offerRedeemedForCurrent, .priceIncreaseAccepted, .priceIncreasePending, .consumptionRequested, .refundDeclined, .renewalExtended, .lifetime:
             return true
         default:
             return false
