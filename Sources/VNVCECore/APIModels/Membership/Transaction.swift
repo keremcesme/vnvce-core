@@ -13,8 +13,8 @@ public final class Transaction {
         public let subscriptionGroupID: String?
         public let isUpgraded: Bool
         
-        public let currencyCode: String
-        public let price: Double
+//        public let currencyCode: String
+//        public let price: Double
         
         public let purchaseDate: Date
         public let expirationDate: Date?
