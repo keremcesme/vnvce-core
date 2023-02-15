@@ -1,7 +1,7 @@
 
 import Foundation
 
-public final class TransactionRoute {
+public final class TransactionRoutes {
     public struct V1 {
         public static let shared = V1()
         private static let membership = "membership".path
