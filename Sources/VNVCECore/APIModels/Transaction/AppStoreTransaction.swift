@@ -9,7 +9,7 @@ public final class AppStoreTransaction {
         public let appAccountToken: UUID
         public let productID: String
         public let appBundleID: String
-//        public let purchaseDate: Date
+        public let purchaseDate: Date
         public let originalPurchaseDate: Date
         public let purchasedQuantity: Int
         
@@ -36,7 +36,7 @@ public final class AppStoreTransaction {
             self.appAccountToken = appAccountToken
             self.productID = productID
             self.appBundleID = appBundleID
-//            self.purchaseDate = purchaseDate
+            self.purchaseDate = purchaseDate
             self.originalPurchaseDate = originalPurchaseDate
             self.purchasedQuantity = purchasedQuantity
             self.productType = productType
