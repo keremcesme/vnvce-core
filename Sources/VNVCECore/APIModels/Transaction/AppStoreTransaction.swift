@@ -31,7 +31,7 @@ public final class AppStoreTransaction {
         public let signedDate: TimeInterval
         
         
-        private init(
+        public init(
             id: String,
             originalID: String,
             appAccountToken: UUID,
