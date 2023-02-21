@@ -2,7 +2,7 @@
 import Foundation
 
 public final class Moment {
-    public struct V1: Codable {
+    public struct V1: Codable, Equatable {
         public let id: UUID
         public let media: MomentMediaDetail.V1
         public let createdAt: TimeInterval

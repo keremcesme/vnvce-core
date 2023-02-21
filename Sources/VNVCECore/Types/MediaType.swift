@@ -1,7 +1,7 @@
 
 import Foundation
 
-public enum MediaType: String, Codable {
+public enum MediaType: String, Codable, Equatable {
     case image, movie
     
 

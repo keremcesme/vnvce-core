@@ -2,7 +2,7 @@
 import Foundation
 
 public final class MomentMediaDetail {
-    public struct V1: Codable {
+    public struct V1: Codable, Equatable {
         public let id: UUID
         public let mediaType: MediaType
         public let url: String
