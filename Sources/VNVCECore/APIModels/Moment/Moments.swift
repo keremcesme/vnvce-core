@@ -1,7 +1,7 @@
 
 import Foundation
 
-public final class Moments {
+public final class UserWithMoments {
     public struct V1: Codable {
         public let owner: User.V1.Public
         public var moments: [Moment.V1]
