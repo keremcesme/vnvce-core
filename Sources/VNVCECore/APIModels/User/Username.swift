@@ -10,11 +10,11 @@ public final class Username {
         public init(
             username: String,
             modifiedAt: TimeInterval,
-            testValue: Bool = false
+            testValue: Bool?
         ) {
             self.username = username
             self.modifiedAt = modifiedAt
-            self.testValue = testValue
+            self.testValue = testValue ?? false
         }
         
         enum CodingKeys: String, CodingKey {
