@@ -1,7 +1,7 @@
 
 import Foundation
 
-public final class RelatiosnhipParam {
+public final class RelationshipParam {
     public struct V1: Codable {
         public let userID: String
         public init(_ userID: String) {
