@@ -9,6 +9,7 @@ public final class RelationshipRoutes {
         
         public let fetch = relationship + "fetch".path
         
+        
         // Request
         public let send = relationship + request + "send".path
         public let accept = relationship + request + "accept".path
