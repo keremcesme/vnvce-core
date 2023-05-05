@@ -4,12 +4,14 @@ import Foundation
 public final class UploadMomentPayload {
     public struct V1: Codable {
         public let id: UUID
+        public let message: String?
         public let media: Media
         public let audience: MomentAudience
         public let location: MomentLocation?
         
-        public init(id: UUID, media: Media, audience: MomentAudience, location: MomentLocation?) {
+        public init(id: UUID, message: String?, media: Media, audience: MomentAudience, location: MomentLocation?) {
             self.id = id
+            self.message = message
             self.media = media
             self.audience = audience
             self.location = location
@@ -35,6 +37,7 @@ public final class UploadMomentPayload {
         
         enum CodingKeys: String, CodingKey {
             case id
+            case message
             case media = "media"
             case audience
             case location
