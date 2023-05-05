@@ -19,20 +19,17 @@ public final class UploadMomentPayload {
             public let mediaType: MediaType
             public let url: String
             public let thumbnailURL: String?
-            public let name: String
             
-            public init(mediaType: MediaType, url: String, thumbnailURL: String?, name: String) {
+            public init(mediaType: MediaType, url: String, thumbnailURL: String?) {
                 self.mediaType = mediaType
                 self.url = url
                 self.thumbnailURL = thumbnailURL
-                self.name = name
             }
             
             enum CodingKeys: String, CodingKey {
                 case mediaType = "media_type"
                 case url
                 case thumbnailURL = "thumbnail_url"
-                case name
             }
         }
         
