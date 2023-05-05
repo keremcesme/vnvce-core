@@ -1,7 +1,7 @@
 
 import Foundation
 
-public enum MomentAudience: String, Codable, Equatable {
+public enum MomentAudience: String, Codable, Equatable, Hashable {
     case friendsOnly, friendsOfFriends, nearby
     
 

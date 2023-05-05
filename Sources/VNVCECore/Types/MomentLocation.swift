@@ -1,7 +1,7 @@
 
 import Foundation
 
-public struct MomentLocation: Codable {
+public struct MomentLocation: Codable, Equatable, Hashable {
     public let latitude: Double
     public let longitude: Double
     
