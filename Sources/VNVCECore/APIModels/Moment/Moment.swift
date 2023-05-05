@@ -1,4 +1,4 @@
 
 import Foundation
 
-public final class Moment {public final class V1 {}}
+public final class Moment { public final class V1 {}}

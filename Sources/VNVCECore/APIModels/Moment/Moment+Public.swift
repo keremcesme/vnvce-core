@@ -4,14 +4,16 @@ import Foundation
 extension Moment.V1 {
     public struct Public: Codable, Equatable, Hashable {
         public let id: UUID
+        public let message: String?
         public let mediaType: MediaType
         public let url: String
         public let thumbnailURL: String?
         public let sensitiveContent: Bool
         public let createdAt: TimeInterval
         
-        public init(id: UUID, mediaType: MediaType, url: String, thumbnailURL: String?, sensitiveContent: Bool, createdAt: TimeInterval) {
+        public init(id: UUID, message: String?, mediaType: MediaType, url: String, thumbnailURL: String?, sensitiveContent: Bool, createdAt: TimeInterval) {
             self.id = id
+            self.message = message
             self.mediaType = mediaType
             self.url = url
             self.thumbnailURL = thumbnailURL
@@ -21,6 +23,7 @@ extension Moment.V1 {
         
         enum CodingKeys: String, CodingKey {
             case id
+            case message
             case mediaType = "media_type"
             case url
             case thumbnailURL = "thumbnail_url"
