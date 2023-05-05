@@ -6,14 +6,14 @@ extension Moment.V1 {
         public let id: UUID
         public let message: String?
         public let audience: MomentAudience
-        public let location: MomentLocation
+        public let location: MomentLocation?
         public let mediaType: MediaType
         public let url: String
         public let thumbnailURL: String?
         public let sensitiveContent: Bool
         public let createdAt: TimeInterval
         
-        public init(id: UUID, message: String?, audience: MomentAudience, location: MomentLocation, mediaType: MediaType, url: String, thumbnailURL: String?, sensitiveContent: Bool, createdAt: TimeInterval) {
+        public init(id: UUID, message: String?, audience: MomentAudience, location: MomentLocation?, mediaType: MediaType, url: String, thumbnailURL: String?, sensitiveContent: Bool, createdAt: TimeInterval) {
             self.id = id
             self.message = message
             self.audience = audience
