@@ -2,7 +2,7 @@
 import Foundation
 
 extension User.V1 {
-    public struct Public: Codable, Equatable, Hashable {
+    public struct Public: Identifiable, Codable, Equatable, Hashable {
         public let id: UUID
         public let username: String
         public let displayName: String?
